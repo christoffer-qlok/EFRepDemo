@@ -55,7 +55,7 @@ namespace EFRepDemo
                 // Hämta vår User och plocka ut dess TodoItems
                 List<TodoItem> todoItems = context.Users
                     .Where(u => u.Id == user.Id)
-                    .Include(u => u.TodoItems) 
+                    .Include(u => u.TodoItems) // Fyll i TodoItems navigation propertyn med värden från databasen
                     .Single()
                     .TodoItems
                     .ToList();
